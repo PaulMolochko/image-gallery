@@ -33,8 +33,22 @@ imgArray.forEach(image => {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', image);
     thumbBar.appendChild(newImage);
-    //newImage.addEventListener('click', e => displayedImage.src = e.target.src);
-    //newImage.onclick = function (e) {displayedImage.src = e.target.src}; 
+    //newImage.addEventListener('click', evnt => displayedImage.src = evnt.target.src);
+    //newImage.onclick = function (evnt) {displayedImage.src = evnt.target.src}; 
 })
-thumbBar.addEventListener('click', e => displayedImage.src = e.target.src); //alternative method
+thumbBar.addEventListener('click', evnt => displayedImage.src = evnt.target.src); //alternative method
 /* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', () => {
+    function darken() {
+        btn.setAttribute('class','light');
+        btn.textContent = 'Lighten';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+    };
+    
+    function lighten() {        
+        btn.setAttribute('class','dark');
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+    };
+    btn.getAttribute('class') === 'dark' ? darken() : lighten();
+})
