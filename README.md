@@ -43,3 +43,14 @@ The following lines provide a basis for achieving the changes stipulated in poin
 btn.setAttribute('class', xxx);
 btn.textContent = xxx;
 overlay.style.backgroundColor = xxx;
+
+```
+
+#### Future improvements
+
+1. Better CSS
+  1.1 on-hover animations
+  1.2 Transition animations
+2. Turning it into a carousel
+3. 
+4. 
