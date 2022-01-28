@@ -13,9 +13,10 @@ Several way to do it.*/
 //for(;;) loop
 /*
 for (let i = 0; i < imgArray.length; i++){
-const newImage = document.createElement('img');
-newImage.setAttribute('src', imgArray[i]);
-thumbBar.appendChild(newImage);
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', imgArray[i]);
+    thumbBar.appendChild(newImage);
+    thumbBar.addEventListener('click', e => displayedImage.src = e.target.src);
 }
 */
 //for-of from ES5
@@ -24,13 +25,16 @@ for (const image of imgArray) {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', image);
     thumbBar.appendChild(newImage);
+    thumbBar.addEventListener('click', e => displayedImage.src = e.target.src);
 }
 */
 // forEach array method
 imgArray.forEach(image => {
     const newImage = document.createElement('img');
     newImage.setAttribute('src', image);
-    thumbBar.appendChild(newImage); 
+    thumbBar.appendChild(newImage);
+    //newImage.addEventListener('click', e => displayedImage.src = e.target.src);
+    //newImage.onclick = function (e) {displayedImage.src = e.target.src}; 
 })
-
+thumbBar.addEventListener('click', e => displayedImage.src = e.target.src); //alternative method
 /* Wiring up the Darken/Lighten button */
